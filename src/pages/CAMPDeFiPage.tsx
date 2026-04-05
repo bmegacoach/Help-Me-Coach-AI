@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 import { 
   Coins, 
   Shield, 
@@ -56,11 +56,11 @@ export const CAMPDeFiPage: React.FC = () => {
     },
     {
       title: 'GOLDBACKBOND Protection',
-      description: 'Enterprise-grade security with $1 Billion protection fund providing comprehensive coverage for smart contracts, oracle failures, and market volatility.',
+      description: 'Enterprise-grade security with $100 Million protection fund providing comprehensive coverage for smart contracts, oracle failures, and market volatility.',
       icon: Shield,
-      value: '$1B USD',
+      value: '$100M',
       gradient: 'from-yellow-500 to-amber-600',
-      details: ['100% smart contract coverage', '100% oracle protection', '85% volatility coverage', '84.7% fund utilization']
+      details: ['100% smart contract coverage', '100% oracle protection', '85% volatility coverage', 'Active fund management']
     },
     {
       title: 'Institutional DeFi Integration',
@@ -73,11 +73,10 @@ export const CAMPDeFiPage: React.FC = () => {
   ]
 
   const stats = [
-    { label: 'Average APY', value: '10.42%', icon: TrendingUp, description: 'Optimized yield through AI strategies' },
-    { label: 'USDca Supply', value: '24.8M', icon: DollarSign, description: 'Multi-collateral stablecoin supply' },
-    { label: 'Protection Fund', value: '$1B', icon: Shield, description: 'GOLDBACKBOND-secured protection' },
+    { label: 'Target APY Range', value: '18–20%', icon: TrendingUp, description: 'Target yield range through AI-optimized strategies*' },
+    { label: 'USDca Supply', value: '100M', icon: DollarSign, description: 'Multi-collateral stablecoin current supply' },
+    { label: 'Protection Fund', value: '$100M', icon: Shield, description: 'GOLDBACKBOND-secured protection fund' },
     { label: 'Active Strategies', value: '19', icon: BarChart3, description: 'AI-powered optimization strategies' },
-
   ]
 
   const benefits = [
@@ -123,9 +122,9 @@ export const CAMPDeFiPage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed"
             >
-              Revolutionary multi-collateral stablecoin protocol featuring USDca stable asset, 
-              Ethena-based delta-neutral hedging, AI-powered optimization, and enterprise-grade insurance. 
-              Experience the future of institutional DeFi with 10.42% average APY and comprehensive risk protection.
+              Revolutionary multi-collateral stablecoin protocol featuring USDca stable asset,
+              Ethena-based delta-neutral hedging, AI-powered optimization, and enterprise-grade insurance.
+              Experience the future of institutional DeFi with target yields of 18–20% APY and comprehensive risk protection.
             </motion.p>
           </div>
         </section>
@@ -154,6 +153,9 @@ export const CAMPDeFiPage: React.FC = () => {
                 )
               })}
             </div>
+            <p className="text-xs text-text-secondary/50 text-center mt-4">
+              *Target APY is not guaranteed. Past performance is not indicative of future results.
+            </p>
           </div>
         </section>
 
@@ -184,7 +186,7 @@ export const CAMPDeFiPage: React.FC = () => {
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-accent-green mr-3" />
-                      24.8M USDca circulating supply
+                      100M USDca current supply
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-accent-green mr-3" />
@@ -246,7 +248,7 @@ export const CAMPDeFiPage: React.FC = () => {
                     <BarChart3 className="w-8 h-8 text-blue-400" />
                   </div>
                   <h4 className="font-semibold text-text-primary mb-2">Stable Yields</h4>
-                  <p className="text-text-secondary text-sm">Consistent 10.42% APY through optimized strategies</p>
+                  <p className="text-text-secondary text-sm">Target 18–20% APY through optimized strategies</p>
                 </div>
                 <div className="text-center">
                   <div className="bg-purple-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
@@ -425,43 +427,51 @@ export const CAMPDeFiPage: React.FC = () => {
                 Experience the Future of <span className="text-accent-blue">Institutional DeFi</span>
               </h2>
               <p className="text-xl text-text-secondary mb-8 max-w-3xl mx-auto">
-                Join users earning stable yields through USDca's delta-neutral strategies. 
+                Join users earning stable yields through USDca's delta-neutral strategies.
                 Start with no minimum deposit and experience enterprise-grade DeFi security.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button 
+                <Button
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-4 transition-all duration-200 shadow-lg hover:shadow-xl"
                   onClick={() => window.open('https://campdefi.app', '_blank')}
                 >
-                  Launch App - Earn 10.42% APY
+                  Launch App — Target 18–20% APY
                   <ArrowUpRight className="w-5 h-5 ml-2" />
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="border-accent-blue text-accent-blue hover:bg-accent-blue hover:text-white text-lg px-8 py-4"
                   onClick={() => window.open('https://docs.campdefi.app', '_blank')}
                 >
                   Technical Documentation
                 </Button>
               </div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-accent-blue">10.42%</div>
-                  <div className="text-sm text-text-secondary">Average APY</div>
+                  <div className="text-2xl font-bold text-accent-blue">18–20%</div>
+                  <div className="text-sm text-text-secondary">Target APY Range</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-accent-green">$1B</div>
+                  <div className="text-2xl font-bold text-accent-green">$100M</div>
                   <div className="text-sm text-text-secondary">Protection Fund</div>
                 </div>
               </div>
+
+              {/* Disclosure */}
+              <p className="text-xs text-text-secondary/60 max-w-2xl mx-auto leading-relaxed">
+                *Past performance is not indicative of future results. Target APY range of 18–20% reflects
+                projected yields based on current strategy configurations and market conditions. Actual returns
+                may vary and are not guaranteed. DeFi protocols carry inherent risks including smart contract risk,
+                market volatility, and potential loss of principal. Please review all documentation before participating.
+              </p>
             </motion.div>
           </div>
         </section>
       </div>
 
       <div className="pr-20"> {/* Add right padding to prevent overlap with sidebar */}
-        <OpenAISidebar />
+        <CAMPSidebar />
       </div>
     </div>
   )

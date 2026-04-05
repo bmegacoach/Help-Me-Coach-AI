@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 import { Send, MessageCircle, Mail, Phone, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
@@ -349,8 +349,8 @@ export const ContactPage: React.FC = () => {
         </section>
       </div>
 
-      {/* OpenAI-style Sidebar */}
-      <OpenAISidebar />
+      {/* CAMP Ecosystem Sidebar */}
+      <CAMPSidebar />
     </div>
   )
 }

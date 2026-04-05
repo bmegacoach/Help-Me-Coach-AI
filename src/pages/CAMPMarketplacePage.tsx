@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 import { CamperOnboardingModal } from '../components/onboarding/CamperOnboardingModal'
 import { SponsorOnboardingModal } from '../components/onboarding/SponsorOnboardingModal'
 import { 
@@ -656,7 +656,7 @@ export const CAMPMarketplacePage: React.FC = () => {
       </div>
 
       <div className="pr-20"> {/* Add right padding to prevent overlap with sidebar */}
-        <OpenAISidebar />
+        <CAMPSidebar />
       </div>
 
       {/* Onboarding Modals */}

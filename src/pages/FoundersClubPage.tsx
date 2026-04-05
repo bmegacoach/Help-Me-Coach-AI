@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 import { Crown, Star, Diamond, Check, TrendingUp, Users, Shield, AlertTriangle, Clock, Award, Zap, Building } from 'lucide-react'
 import { Button } from '../components/ui/button'
 
@@ -427,7 +427,7 @@ export const FoundersClubPage: React.FC = () => {
       </div>
 
       <div className="pr-20"> {/* Add right padding to prevent overlap with sidebar */}
-        <OpenAISidebar />
+        <CAMPSidebar />
       </div>
     </div>
   )

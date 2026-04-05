@@ -34,7 +34,7 @@ export const ChatInterface: React.FC = () => {
     setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: `I understand you're asking about "${input}". I'm CoachAI, specialized in the CAMP ecosystem, Real World Assets (RWA), GoldBackBond systems, and tech education. I can help you understand investment opportunities, tech boot camps, and the innovative blockchain solutions we're building. How would you like me to assist you further?`,
+        content: `I understand you're asking about "${input}". I'm OpenChief, your C-Suite of AI experts powered by Qwen 3.6 with RAG intelligence. I have a CEO for strategy, CFO for finance, CMO for marketing, and CTO for technology — all trained on the CAMP ecosystem. Whether you need help building a business plan, analyzing your finances, launching a marketing campaign, or architecting a tech stack, I'll route your question to the right expert and get to work. What would you like to tackle?`,
         isUser: false,
         timestamp: new Date(),
       }
@@ -44,10 +44,10 @@ export const ChatInterface: React.FC = () => {
   }
 
   const suggestedQuestions = [
-    "What is the CAMP ecosystem?",
-    "Tell me about Founders Club opportunities",
-    "How do tech boot camps work?",
-    "Explain GoldBackBond system"
+    "Help me create a business plan for my startup",
+    "What marketing strategy should I use to launch?",
+    "How do I tokenize real-world assets?",
+    "What does CAMP Alpha include?"
   ]
 
   return (
@@ -99,7 +99,7 @@ export const ChatInterface: React.FC = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="How can I help you?"
+              placeholder="Ask me anything about building or managing your business and I will get to work..."
               className="chat-input pr-16"
               disabled={isLoading}
             />

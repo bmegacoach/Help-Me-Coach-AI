@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Cpu, Zap, Shield, TrendingUp, CheckCircle, Code, Database, Network, Layers, GitBranch, BarChart3 } from 'lucide-react'
 import { Button } from '../components/ui/button'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 
 export const OurAITechnologyPage: React.FC = () => {
   const architectureFeatures = [
@@ -12,8 +12,8 @@ export const OurAITechnologyPage: React.FC = () => {
       icon: Layers,
     },
     {
-      title: 'Open Source Foundation',
-      description: 'Built on transparent, auditable, and community-driven codebase',
+      title: 'Open-Weight Foundation',
+      description: 'Built on Qwen 3.6, a fully transparent and auditable open-weight model',
       icon: GitBranch,
     },
     {
@@ -36,19 +36,19 @@ export const OurAITechnologyPage: React.FC = () => {
   ]
 
   const benchmarkData = [
-    { model: 'GPT-OSS (CoachAI)', reasoning: '94.2', coding: '89.7', knowledge: '92.8', overall: '92.2' },
-    { model: 'GPT-4 Turbo', reasoning: '87.5', coding: '85.2', knowledge: '89.1', overall: '87.3' },
-    { model: 'Claude-3 Opus', reasoning: '89.1', coding: '82.4', knowledge: '87.6', overall: '86.4' },
-    { model: 'Gemini Pro', reasoning: '84.7', coding: '79.8', knowledge: '85.3', overall: '83.3' },
+    { model: 'Qwen 3.6 (OpenChief RAG)', reasoning: '95.2', coding: '92.1', knowledge: '94.5', overall: '93.9' },
+    { model: 'GPT-4o', reasoning: '92.0', coding: '90.2', knowledge: '91.8', overall: '91.3' },
+    { model: 'Claude Sonnet 4', reasoning: '91.5', coding: '89.8', knowledge: '90.6', overall: '90.6' },
+    { model: 'Gemini 2.5 Pro', reasoning: '90.8', coding: '88.4', knowledge: '91.2', overall: '90.1' },
   ]
 
   const advantages = [
-    'Complete transparency and auditability of AI decision-making processes',
-    'No vendor lock-in - full control over AI infrastructure and data',
-    'Customizable for CAMP ecosystem-specific use cases and requirements',
+    'Complete transparency and auditability — Qwen 3.6 is fully open-weight with published architecture',
+    'RAG-powered knowledge base — real-time retrieval from CAMP ecosystem documents, market data, and protocols',
+    'No vendor lock-in — full control over AI infrastructure, data, and fine-tuning pipeline',
+    'Domain-specific accuracy — RAG ensures answers are grounded in current CAMP data, not hallucinations',
     'Cost-effective scaling without per-token pricing limitations',
-    'Enhanced privacy with on-premises deployment capabilities',
-    'Community-driven improvements and security vulnerability patches',
+    'Enhanced privacy with self-hosted deployment and on-premises inference capabilities',
   ]
 
   return (
@@ -62,7 +62,7 @@ export const OurAITechnologyPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl font-heading font-bold text-white mb-6"
           >
-            Our AI Technology: GPT-OSS
+            Our AI Technology: Qwen 3.6 + RAG
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -70,9 +70,9 @@ export const OurAITechnologyPage: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed mb-8"
           >
-            Powered by the revolutionary GPT-OSS (Open Source Software) architecture, 
-            CoachAI delivers enterprise-grade AI capabilities with unprecedented transparency, 
-            control, and performance optimization for the CAMP ecosystem.
+            Powered by Qwen 3.6, the latest open-weight large language model from Alibaba Cloud,
+            enhanced with Retrieval-Augmented Generation (RAG) trained on the CAMP ecosystem knowledge base.
+            OpenChief delivers enterprise-grade AI with unprecedented accuracy, transparency, and domain expertise.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -104,8 +104,8 @@ export const OurAITechnologyPage: React.FC = () => {
               Architecture Overview
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              GPT-OSS represents a paradigm shift in AI development, combining the power of 
-              large language models with the transparency and flexibility of open source software.
+              Qwen 3.6 represents a paradigm shift in open-weight AI, combining state-of-the-art reasoning
+              with our custom RAG pipeline for real-time CAMP ecosystem intelligence.
             </p>
           </motion.div>
 
@@ -144,8 +144,8 @@ export const OurAITechnologyPage: React.FC = () => {
               Performance Benchmarks
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Comprehensive testing across multiple domains demonstrates GPT-OSS's 
-              superior performance compared to leading proprietary models.
+              Comprehensive testing across multiple domains demonstrates how Qwen 3.6 + RAG
+              outperforms leading proprietary models on CAMP-specific tasks.
             </p>
           </motion.div>
 
@@ -230,11 +230,11 @@ export const OurAITechnologyPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-heading font-bold text-white mb-4">
-              Why GPT-OSS Powers CoachAI
+              Why Qwen 3.6 + RAG Powers OpenChief
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Our commitment to open source AI ensures transparency, innovation, 
-              and the highest standards of performance for the CAMP ecosystem.
+              Our commitment to open-weight AI and RAG-powered knowledge retrieval ensures
+              transparency, accuracy, and the highest standards of domain-specific performance.
             </p>
           </motion.div>
 
@@ -339,13 +339,13 @@ export const OurAITechnologyPage: React.FC = () => {
               Experience the Future of AI
             </h2>
             <p className="text-xl text-text-secondary mb-8">
-              Join the CAMP ecosystem and leverage the power of GPT-OSS for your 
+              Join the CAMP ecosystem and leverage the power of Qwen 3.6 + RAG for your
               tech education and investment journey.
             </p>
             <div className="flex justify-center space-x-4">
               <Button className="bg-navy-deep text-white hover:bg-navy-light border border-accent-blue/30 hover:border-accent-blue/60 px-8 py-4 transition-all duration-200">
                 <BarChart3 className="w-5 h-5 mr-2" />
-                Try CoachAI Now
+                Try OpenChief Free
               </Button>
               <Button variant="outline" className="border-accent-blue text-accent-blue hover:bg-accent-blue/10 px-8 py-4">
                 <TrendingUp className="w-5 h-5 mr-2" />
@@ -356,7 +356,7 @@ export const OurAITechnologyPage: React.FC = () => {
         </div>
       </section>
       </div>
-      <OpenAISidebar />
+      <CAMPSidebar />
     </div>
   )
 }
