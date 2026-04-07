@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Send, Sparkles } from 'lucide-react'
 import { Button } from './ui/button'
+const OPENCHIEF_API_URL = import.meta.env.VITE_OPENCHIEF_API_URL || 'http://localhost:3001'
 
 interface Message {
   id: string
@@ -10,10 +11,16 @@ interface Message {
   timestamp: Date
 }
 
+interface ChatMessage {
+  role: 'user' | 'assistant'
+  content: string
+}
+
 export const ChatInterface: React.FC = () => {
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const chatHistoryRef = useRef<ChatMessage[]>([])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -27,20 +34,40 @@ export const ChatInterface: React.FC = () => {
     }
 
     setMessages(prev => [...prev, userMessage])
+    chatHistoryRef.current.push({ role: 'user', content: input })
     setInput('')
     setIsLoading(true)
 
-    // Simulate AI response (replace with actual LLM integration)
-    setTimeout(() => {
+    try {
+      const response = await fetch(`${OPENCHIEF_API_URL}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: chatHistoryRef.current }),
+      })
+
+      const data = response.ok ? await response.json() : null
+      const replyContent = data?.reply || 'I apologize, but I\'m having trouble connecting right now. Please try again in a moment.'
+
+      chatHistoryRef.current.push({ role: 'assistant', content: replyContent })
+
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: `I understand you're asking about "${input}". I'm OpenChief, your C-Suite of AI experts powered by Qwen 3.6 with RAG intelligence. I have a CEO for strategy, CFO for finance, CMO for marketing, and CTO for technology — all trained on the CAMP ecosystem. Whether you need help building a business plan, analyzing your finances, launching a marketing campaign, or architecting a tech stack, I'll route your question to the right expert and get to work. What would you like to tackle?`,
+        content: replyContent,
         isUser: false,
         timestamp: new Date(),
       }
       setMessages(prev => [...prev, aiResponse])
+    } catch {
+      const fallbackMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: 'I apologize, but I\'m having trouble connecting right now. Please try again in a moment.',
+        isUser: false,
+        timestamp: new Date(),
+      }
+      setMessages(prev => [...prev, fallbackMessage])
+    } finally {
       setIsLoading(false)
-    }, 1500)
+    }
   }
 
   const suggestedQuestions = [
