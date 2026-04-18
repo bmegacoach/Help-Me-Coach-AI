@@ -25,6 +25,21 @@ export const HomePage: React.FC = () => {
               >
                 Where should we start?
               </motion.h1>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+              >
+                <a
+                  href="https://coachai-camp-ecosystem.web.app/tech-camp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-transparent border border-accent-blue text-accent-blue hover:bg-accent-blue/10 transition-all duration-200 rounded-md px-6 py-3 font-medium text-base"
+                >
+                  View Tech Camp Curriculum
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
             </div>
 
             {/* Chat Interface */}
