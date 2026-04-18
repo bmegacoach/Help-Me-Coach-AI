@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Send, Sparkles } from 'lucide-react'
 import { Button } from './ui/button'
+const OPENCHIEF_API_URL = import.meta.env.VITE_OPENCHIEF_API_URL || 'http://localhost:3001'
 
 interface Message {
   id: string
@@ -10,10 +11,16 @@ interface Message {
   timestamp: Date
 }
 
+interface ChatMessage {
+  role: 'user' | 'assistant'
+  content: string
+}
+
 export const ChatInterface: React.FC = () => {
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const chatHistoryRef = useRef<ChatMessage[]>([])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -27,27 +34,47 @@ export const ChatInterface: React.FC = () => {
     }
 
     setMessages(prev => [...prev, userMessage])
+    chatHistoryRef.current.push({ role: 'user', content: input })
     setInput('')
     setIsLoading(true)
 
-    // Simulate AI response (replace with actual LLM integration)
-    setTimeout(() => {
+    try {
+      const response = await fetch(`${OPENCHIEF_API_URL}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: chatHistoryRef.current }),
+      })
+
+      const data = response.ok ? await response.json() : null
+      const replyContent = data?.reply || 'I apologize, but I\'m having trouble connecting right now. Please try again in a moment.'
+
+      chatHistoryRef.current.push({ role: 'assistant', content: replyContent })
+
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: `I understand you're asking about "${input}". I'm CoachAI, specialized in the CAMP ecosystem, Real World Assets (RWA), GoldBackBond systems, and tech education. I can help you understand investment opportunities, tech boot camps, and the innovative blockchain solutions we're building. How would you like me to assist you further?`,
+        content: replyContent,
         isUser: false,
         timestamp: new Date(),
       }
       setMessages(prev => [...prev, aiResponse])
+    } catch {
+      const fallbackMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: 'I apologize, but I\'m having trouble connecting right now. Please try again in a moment.',
+        isUser: false,
+        timestamp: new Date(),
+      }
+      setMessages(prev => [...prev, fallbackMessage])
+    } finally {
       setIsLoading(false)
-    }, 1500)
+    }
   }
 
   const suggestedQuestions = [
-    "What is the CAMP ecosystem?",
-    "Tell me about Founders Club opportunities",
-    "How do tech boot camps work?",
-    "Explain GoldBackBond system"
+    "Help me create a business plan for my startup",
+    "What marketing strategy should I use to launch?",
+    "How do I tokenize real-world assets?",
+    "What does CAMP Alpha include?"
   ]
 
   return (
@@ -99,7 +126,7 @@ export const ChatInterface: React.FC = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="How can I help you?"
+              placeholder="Ask me anything about building or managing your business and I will get to work..."
               className="chat-input pr-16"
               disabled={isLoading}
             />

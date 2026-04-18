@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 import { 
   Building, 
   TrendingUp, 
@@ -535,7 +535,7 @@ export const CAMPRWAAgentPage: React.FC = () => {
               
               <div className="space-y-6 text-text-primary">
                 <p className="leading-relaxed text-center">
-                  GoldBackBond Inc. serves as a strategic partner providing comprehensive ecosystem protection through the $1 Billion GoldBackBond Protocol Protection Fund. This fund is capitalized by Trust Certificate Debentures from corporate treasury and functions as discretionary capital backstop for CAMP protocols.
+                  GoldBackBond Inc. serves as a strategic partner providing comprehensive ecosystem protection through the GoldBackBond Protocol Protection Fund. This fund is capitalized from corporate treasury reserves and functions as a discretionary capital backstop for CAMP protocols.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -692,7 +692,7 @@ export const CAMPRWAAgentPage: React.FC = () => {
       </div>
 
       <div className="pr-20"> {/* Add right padding to prevent overlap with sidebar */}
-        <OpenAISidebar />
+        <CAMPSidebar />
       </div>
     </div>
   )

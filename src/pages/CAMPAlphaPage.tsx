@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 import { 
   Zap, 
   Code, 
@@ -523,7 +523,7 @@ export const CAMPAlphaPage: React.FC = () => {
       </div>
 
       <div className="pr-20"> {/* Add right padding to prevent overlap with sidebar */}
-        <OpenAISidebar />
+        <CAMPSidebar />
       </div>
     </div>
   )

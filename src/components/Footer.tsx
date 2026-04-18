@@ -74,14 +74,14 @@ export const Footer: React.FC = () => {
             <div className="mb-6">
               <img
                 src="/images/coachai-3d-logo.png"
-                alt="CoachAI Logo"
+                alt="OpenChief Logo"
                 className="h-16 w-auto mb-4"
               />
             </div>
             <p className="text-text-secondary text-sm leading-relaxed">
-              CoachAI is revolutionizing education and investment through our innovative 
-              CAMP ecosystem, combining tech boot camps, DeFi protocols, and 
-              real-world asset tokenization.
+              OpenChief is your AI-powered C-Suite of experts, revolutionizing how you build
+              and manage your business through the CAMP ecosystem — tech boot camps, DeFi protocols,
+              and real-world asset tokenization.
             </p>
 
           </motion.div>
@@ -165,7 +165,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-navy-light/30 mt-6 pt-4">
           <div className="text-center">
             <p className="text-sm text-text-secondary">
-              © CoachAi Development Fund 2018. All Rights Reserved.
+              © OpenChief by CoachAi Development Fund 2018. All Rights Reserved.
             </p>
           </div>
         </div>

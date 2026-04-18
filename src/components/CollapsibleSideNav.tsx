@@ -48,7 +48,7 @@ export const CollapsibleSideNav: React.FC = () => {
   const campEcosystemContent = {
     home: [
       {
-        name: 'CoachAI',
+        name: 'OpenChief',
         description: 'AI-powered executive coaching platform',
         icon: Bot,
         href: '/'
@@ -171,7 +171,7 @@ export const CollapsibleSideNav: React.FC = () => {
               <div className={`flex items-center mb-6 ${isCollapsed ? 'justify-center' : ''}`}>
                 <img 
                   src="/images/COACHAI SMALL LOGO.png" 
-                  alt="CoachAI Logo" 
+                  alt="OpenChief Logo" 
                   className="w-10 h-10 object-contain"
                 />
                 <AnimatePresence>
@@ -184,7 +184,7 @@ export const CollapsibleSideNav: React.FC = () => {
                       className="overflow-hidden ml-3"
                     >
                       <h2 className="text-lg font-heading font-semibold text-white">
-                        CoachAI Platform
+                        OpenChief Platform
                       </h2>
                     </motion.div>
                   )}

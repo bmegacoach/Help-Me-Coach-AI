@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
             >
               <MessageSquare className="w-8 h-8 text-accent-blue" />
               <span className="text-2xl font-heading font-bold text-text-primary">
-                CoachAI
+                OpenChief
               </span>
             </motion.div>
           </Link>

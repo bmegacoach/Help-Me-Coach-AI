@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 import { Scale, Shield, AlertTriangle, FileText, Users, CreditCard } from 'lucide-react'
 
 export const TermsOfServicePage: React.FC = () => {
@@ -273,8 +273,8 @@ export const TermsOfServicePage: React.FC = () => {
         </section>
       </div>
 
-      {/* OpenAI-style Sidebar */}
-      <OpenAISidebar />
+      {/* CAMP Ecosystem Sidebar */}
+      <CAMPSidebar />
     </div>
   )
 }

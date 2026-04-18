@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Network, Users, Target, TrendingUp, Sparkles, Globe, Building2, Lightbulb, Rocket, Shield } from 'lucide-react'
 import { Button } from '../components/ui/button'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 
 export const OurVisionPage: React.FC = () => {
   const visionPillars = [
@@ -227,7 +227,7 @@ export const OurVisionPage: React.FC = () => {
         </div>
       </section>
       </div>
-      <OpenAISidebar />
+      <CAMPSidebar />
     </div>
   )
 }

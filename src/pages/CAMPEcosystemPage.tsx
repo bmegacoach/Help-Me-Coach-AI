@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { OpenAISidebar } from '../components/OpenAISidebar'
+import { CAMPSidebar } from '../components/CAMPSidebar'
 import { Building, Network, Coins, ArrowRight, Sparkles, TrendingUp, Shield, Users } from 'lucide-react'
 import { Button } from '../components/ui/button'
 
@@ -37,12 +37,12 @@ export const CAMPEcosystemPage: React.FC = () => {
     {
       title: 'CAMP DeFi',
       subtitle: 'Next-Generation Multi-Collateral Protocol',
-      description: 'CAMP DeFi is a next-generation multi-collateral stablecoin protocol featuring USDca, backed by WBTC, USDC, USDT, ETH, and WSOL. The protocol combines AI-powered optimization through Lab Agent AI, enterprise-grade security, and a massive 1 Billion USD insurance fund (GOLDBACKBOND-secured).',
+      description: 'CAMP DeFi is a next-generation multi-collateral stablecoin protocol featuring USDca, backed by WBTC, USDC, USDT, ETH, and WSOL. The protocol combines AI-powered optimization through Lab Agent AI, enterprise-grade security, and a $100M protection fund (GOLDBACKBOND-secured).',
       image: '/images/goldbackbond_logo_hd.png',
       features: [
         'Multi-collateral USDca stablecoin',
         'AI-powered Lab Agent optimization',
-        '$1B USD GOLDBACKBOND insurance fund',
+        '$100M GOLDBACKBOND protection fund',
         'Multi-chain support (24 networks)',
       ],
       icon: Coins,
@@ -226,7 +226,7 @@ export const CAMPEcosystemPage: React.FC = () => {
         </section>
       </div>
 
-      <OpenAISidebar />
+      <CAMPSidebar />
     </div>
   )
 }
