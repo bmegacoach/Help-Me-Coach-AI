@@ -56,6 +56,23 @@ export const HomePage: React.FC = () => {
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </motion.div>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="mt-4 text-sm text-text-secondary"
+              >
+                Investor inquiries:{' '}
+                <a
+                  href="https://coachai.finance/offer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-blue hover:underline inline-flex items-center gap-1"
+                >
+                  Investor Portal
+                  <ArrowRight className="w-3 h-3" />
+                </a>
+              </motion.p>
             </div>
 
             {/* Chat Interface */}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Mail } from 'lucide-react'
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear()
@@ -19,6 +19,13 @@ export const Footer: React.FC = () => {
     { name: 'Contact', path: '/contact' },
     { name: 'Privacy Policy', path: '/privacy-policy' },
     { name: 'Terms of Service', path: '/terms-of-service' },
+  ]
+
+  const ecosystem = [
+    { name: 'Investor Portal', url: 'https://coachai.finance', external: true },
+    { name: 'Flowbook', url: 'https://flowbook.tech', external: true },
+    { name: 'CoachAI Tech Camps', path: '/camp-alpha', external: false },
+    { name: 'Camp DeFi', url: 'https://campdefi.app', external: true },
   ]
 
   const socialMedia = [
@@ -63,7 +70,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-navy-deep border-t border-navy-light/30 mt-auto">
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Column 1 - About & Branding */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,11 +141,47 @@ export const Footer: React.FC = () => {
             </ul>
           </motion.div>
 
-          {/* Column 4 - Social Media */}
+          {/* Column 4 - Ecosystem */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="space-y-4"
+          >
+            <h3 className="text-lg font-heading font-semibold text-text-primary mb-4">
+              Ecosystem
+            </h3>
+            <ul className="space-y-3">
+              {ecosystem.map((item, index) => (
+                <li key={index}>
+                  {item.external ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-text-secondary hover:text-accent-blue transition-colors duration-200 text-sm"
+                    >
+                      {item.name}
+                      <ExternalLink className="w-3 h-3 flex-shrink-0" />
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.path!}
+                      className="text-text-secondary hover:text-accent-blue transition-colors duration-200 text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Column 5 - Social Media */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-4"
           >
             <h3 className="text-lg font-heading font-semibold text-text-primary mb-4">
@@ -163,10 +206,17 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Border */}
         <div className="border-t border-navy-light/30 mt-6 pt-4">
-          <div className="text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
             <p className="text-sm text-text-secondary">
               © OpenChief by CoachAi Development Fund 2018. All Rights Reserved.
             </p>
+            <a
+              href="mailto:troy@helpmecoach.ai"
+              className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent-blue transition-colors duration-200"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              troy@helpmecoach.ai
+            </a>
           </div>
         </div>
       </div>
